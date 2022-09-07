@@ -14,6 +14,15 @@ body {
     width: 100%;
     height: 100vh;
     background-color: rgb(54, 54, 54);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo-principal {
+    width: 276px;
+    height: 100%;
+    z-index: 1;
 }
 
 /*fontes-texto*/
@@ -25,7 +34,7 @@ body {
     font-size: 40px;
 }
 .titulo h3 {
-    font-weight: 400;
+    font-weight: 300;
     font-size: 21px;
 }
 .titulo-recente p {
@@ -34,10 +43,16 @@ body {
 .grupo-recente-bloco h3 {
     font-weight:100;
     font-size: 23px;
+    margin-top: 30px;
 }
 .grupo-recente-texto h2 {
     font-weight:100;
     font-size: 20px;
+    transition: 0.3;
+}
+
+.grupo-recente-texto h2:hover {
+    color: pink;
 }
 .grupo-recente-texto p {
     font-weight:100;
@@ -52,10 +67,16 @@ body {
 .grupo-popular-bloco h3 {
     font-weight:100;
     font-size: 23px;
+    margin-top: 30px;
+    
 }
 .grupo-popular-texto h2 {
     font-weight:100;
     font-size: 20px;
+    transition: 0.3s;
+}
+.grupo-popular-texto h2:hover {
+    color: darkcyan;
 }
 .grupo-popular-texto p {
     font-weight:100;
@@ -74,23 +95,262 @@ a {
 input[type="radio"] {
     appearance: auto;
     box-sizing: border-box;
+    
 }
 
 .grupo-recente {
+    height: 100vh;
+    position: absolute;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    opacity: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+input[type="radio"]:checked ~ .grupo-popular {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+
+.grupo-recente-bloco-aparente {
+    cursor: pointer;
+    width: 276px;
+    height: 160px;
+    background-color: rgba(0, 0, 0, 0.493);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: -100%;
+    transition: 0.6s;
+    position: absolute;
+    overflow: hidden;
  
-    height: 40vh;
-    background-color: cadetblue;
 }
 
-:checked + .conteudo-recente .grupo-recente {
-    display: none;
+input[type="radio"]:checked ~ .grupo-recente .grupo-recente-bloco-aparente {
+    margin-left: 0%;
 }
 
+.grupo-recente-bloco-trasparente {
+    position: relative;
+    width: 276px;
+    height: 160px;
+    background-color: rgba(148, 9, 78, 0.322);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.6s;
+    opacity: 0;
+    top: 160px;
+    cursor: pointer;
+
+}
+
+.grupo-recente-bloco-aparente:hover ~ .grupo-recente-bloco-trasparente{
+    top: 0;
+    opacity: 1;
+
+}
+
+.mais-info:hover{
+    background-color: pink;
+}
+
+
+.circulo {
+    width: 30px;
+    height: 30px;
+    border: solid 2px rgba(255, 255, 255, 0.603);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 15px;
+}
+
+.seta {
+    font-size: 25px;
+    margin: 0px 0px 3px 2px;
+    color: rgba(255, 255, 255, 0.603);
+}
+
+.espaco {
+    height: 100px;
+    width: 100%;
+}
+.mais-info {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
 
 /*blocos-popular*/
 
 .grupo-popular {
-
-    height: 40vh;
-    background-color: rgb(151, 9, 56);
+    position: absolute;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    height: 100vh;
+    opacity: 0;
+    z-index: 0;
+    overflow: hidden;
 }
+
+input[type="radio"]:checked ~ .grupo-recente {
+    opacity: 1;
+    z-index: 1;
+}
+
+.grupo-popular-bloco-aparente {
+    width: 276px;
+    height: 160px;
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-left: +100%;
+    transition: 0.6s;
+    position: absolute;
+}
+
+input[type="radio"]:checked ~ .grupo-popular .grupo-popular-bloco-aparente {
+    margin-left: 0%;
+}
+
+.grupo-popular-bloco-trasparente {
+    width: 276px;
+    height: 160px;
+    background-color: rgba(0, 139, 139, 0.39);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*botões*/
+
+.conteudo-recente  {
+    display: none;
+}
+
+
+.titulo-recente {
+    position: absolute;
+    width: 138px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 55px;
+    background-color:rgb(211, 11, 111);
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-weight: 100;
+    transition: all 300ms ease;
+    border-radius: 5px 0px 0px 0px;
+    border-bottom: solid 3px black;
+}
+
+input[type="radio"]:checked ~ .titulo-recente {
+    background-color: black;
+}
+
+.conteudo-popular {
+    display: none;
+}
+
+.titulo-popular {
+    position: absolute;
+    margin-left: 139px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 138px;
+    height: 55px;
+    background-color:rgb(211, 11, 111);
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: white;
+    font-weight: 100;
+    transition: all 300ms ease;
+    border-radius: 0px 5px 0px 0px;
+    border-bottom: solid 3px black;
+}
+
+input[type="radio"]:checked ~ .titulo-popular {
+    background-color: black;
+}
+
+/*grupo-texto*/
+
+.titulo {
+    margin: 20px 0px 30px 0px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.grupo-recente-texto {
+    background-color:  rgb(54, 54, 54);
+    position: relative;
+    width: 276px;
+    height: 60px;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    margin-left: +100%;
+    transition: 0.6s;
+    z-index: 1;
+
+}
+
+input[type="radio"]:checked ~ .grupo-recente .grupo-recente-texto {
+    margin-left: 0%;
+}
+
+.grupo-popular-texto {
+    position: relative;
+    width: 276px;
+    height: 60px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    margin-left: -100%;
+    transition: 0.6s;
+    
+}
+
+input[type="radio"]:checked ~ .grupo-popular .grupo-popular-texto {
+    margin-left: 0%;
+}
+
+.linha {
+    width: 275px;
+    height: 1px;
+    background-color: grey;
+    margin-top: 20px;
+}
+
+/*pai de tudo*/
+
+
