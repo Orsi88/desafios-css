@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/*font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/1164607.png');
+    background-size: cover;
+
+}
+
+.mesa-container {
+    perspective: 1000;
+    margin: 10px;
+}
+
+.mesa-container:hover .mesa, .mesa-container.hover .mesa {
+    transform: rotateY(180deg);
+}
+
+.mesa-container, .front, .back {
+    width: 150px;
+    height: 150px;
+}
+
+.mesa {
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.front {
+    z-index: 2;
+    background-color: black;
+    
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+img {
+    height: 70px;
+    width: 70px;
+}
+
+a {
+    text-decoration: none;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+#facebook {
+    background-color: darkmagenta;
+}
+
+#twitter {
+    background-color: blueviolet;
+}
+
+#linkedin {
+    background-color: palevioletred;
+}
+
+#discord {
+    background-color: orangered;
+}
+
+#github {
+    background-color: orange;
+}
