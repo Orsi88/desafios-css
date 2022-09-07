@@ -31,7 +31,7 @@
 
         .menu-lateral li {
             list-style: none;
-            position: relative;
+            
         }
 
         .texto {
@@ -65,7 +65,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-sizing: border-box;  
+            box-sizing: border-box; 
+            z-index: 2; 
+        }
+
+        li .rede-social {
+            cursor: pointer;
         }
 
         .menu-lateral .rs {
@@ -105,6 +110,7 @@
         }
 
         .rede-social {
+            cursor: pointer;
             width: 40px;
             height: 40px;
             background-color:  rgb(223, 109, 252);
@@ -113,11 +119,13 @@
             margin-bottom: 30px;
             border: solid 1px rgba(0, 0, 0, 0.205);
             transition: all 0.5s ease;
+            z-index: 1;
         }
 
         .rede-social:hover {
-            filter: brightness(50%);
-        } 
+            background-color: rgb(233, 31, 125);
+        }
+
 
         input[type="checkbox" i] {
             background-color: initial;
@@ -144,6 +152,10 @@
             cursor: pointer;
             z-index: 9999;
             transition: left 1s ease;
+        }
+
+        .menu-botao + .btn:hover {
+            background-color: rgb(233, 31, 125);
         }
 
         .menu-botao:checked ~ .menu-lateral {

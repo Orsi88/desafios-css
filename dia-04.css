@@ -40,6 +40,7 @@ body {
 .titulo-recente p {
     font-size: 18px;
 }
+
 .grupo-recente-bloco h3 {
     font-weight:100;
     font-size: 23px;
@@ -163,12 +164,17 @@ input[type="radio"]:checked ~ .grupo-recente .grupo-recente-bloco-aparente {
     background-color: black;
 }
 
+.mais-info a:hover{
+    color: rgb(204, 101, 4);
+}
+
 .mais-info:hover .circulo{
     border: black;
 }
 
 .mais-info:hover .seta{
     margin-left: 30px;
+    color: rgb(204, 101, 4);
 }
 
 
@@ -299,6 +305,10 @@ input[type="radio"]:checked ~ .titulo-recente {
     background-color: black;
 }
 
+input[type="radio"]:checked ~ .titulo-recente p {
+    color: rgb(248, 26, 118);
+}
+
 .conteudo-popular {
     display: none;
 }
@@ -326,6 +336,10 @@ input[type="radio"]:checked ~ .titulo-recente {
 
 input[type="radio"]:checked ~ .titulo-popular {
     background-color: black;
+}
+
+input[type="radio"]:checked ~ .titulo-popular p {
+    color: rgb(248, 26, 118);
 }
 
 /*grupo-texto*/
