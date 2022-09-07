@@ -11,6 +11,8 @@ body {
     width: 100%;
     overflow-x: hidden;
     box-sizing: border-box; 
+    background-image: url('img/1164607.png');
+    background-size: cover;
 }
 
 .conteudo-main {
