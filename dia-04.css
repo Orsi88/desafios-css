@@ -76,7 +76,7 @@ body {
     transition: 0.3s;
 }
 .grupo-popular-texto h2:hover {
-    color: darkcyan;
+    color: rgb(139, 67, 0);
 }
 .grupo-popular-texto p {
     font-weight:100;
@@ -113,52 +113,62 @@ input[type="radio"]:checked ~ .grupo-popular {
     z-index: 1;
 }
 
-
+.grupo-recente-bloco {
+    width: 276px;
+    height: 160px;
+    overflow: hidden;
+    z-index: 1;
+}
 
 .grupo-recente-bloco-aparente {
     cursor: pointer;
     width: 276px;
     height: 160px;
-    background-color: rgba(0, 0, 0, 0.493);
+    background-color: rgb(36, 36, 36);
     display: flex;
     justify-content: center;
     text-align: center;
     margin-left: -100%;
     transition: 0.6s;
     position: absolute;
-    overflow: hidden;
- 
+    z-index: 1;
 }
 
 input[type="radio"]:checked ~ .grupo-recente .grupo-recente-bloco-aparente {
     margin-left: 0%;
 }
 
-.grupo-recente-bloco-trasparente {
+.grupo-recente-bloco-trasparente{
     position: relative;
-    width: 276px;
-    height: 160px;
-    background-color: rgba(148, 9, 78, 0.322);
     display: flex;
+    background-color: rgba(182, 14, 70, 0.356);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     transition: 0.6s;
-    opacity: 0;
-    top: 160px;
     cursor: pointer;
-
+    z-index: 0;
+    opacity: 1;
+    margin-top: +100%;
 }
 
-.grupo-recente-bloco-aparente:hover ~ .grupo-recente-bloco-trasparente{
-    top: 0;
-    opacity: 1;
 
+.grupo-recente-bloco:hover .grupo-recente-bloco-trasparente {
+    margin-top: 0%;
+    z-index: 1;
 }
 
 .mais-info:hover{
-    background-color: pink;
+    background-color: black;
+}
+
+.mais-info:hover .circulo{
+    border: black;
+}
+
+.mais-info:hover .seta{
+    margin-left: 30px;
 }
 
 
@@ -172,12 +182,14 @@ input[type="radio"]:checked ~ .grupo-recente .grupo-recente-bloco-aparente {
     align-items: center;
     text-align: center;
     margin-left: 15px;
+    transition: 0.2s;
 }
 
 .seta {
     font-size: 25px;
     margin: 0px 0px 3px 2px;
     color: rgba(255, 255, 255, 0.603);
+    transition: 0.4s;
 }
 
 .espaco {
@@ -192,7 +204,7 @@ input[type="radio"]:checked ~ .grupo-recente .grupo-recente-bloco-aparente {
     justify-content: center;
     align-items: center;
     text-align: center;
-
+    
 }
 
 /*blocos-popular*/
@@ -209,6 +221,13 @@ input[type="radio"]:checked ~ .grupo-recente .grupo-recente-bloco-aparente {
 
 input[type="radio"]:checked ~ .grupo-recente {
     opacity: 1;
+    z-index: 1;
+}
+
+.grupo-popular-bloco {
+    width: 276px;
+    height: 160px;
+    overflow: hidden;
     z-index: 1;
 }
 
@@ -230,14 +249,23 @@ input[type="radio"]:checked ~ .grupo-popular .grupo-popular-bloco-aparente {
 }
 
 .grupo-popular-bloco-trasparente {
-    width: 276px;
-    height: 160px;
-    background-color: rgba(0, 139, 139, 0.39);
+    position: relative;
     display: flex;
+    background-color: rgba(139, 67, 0, 0.39);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: 0.6s;
+    cursor: pointer;
+    z-index: 0;
+    opacity: 1;
+    margin-top: +100%;
+}
+
+.grupo-popular-bloco:hover .grupo-popular-bloco-trasparente {
+    margin-top: 0%;
+    z-index: 1;
 }
 
 /*botões*/
