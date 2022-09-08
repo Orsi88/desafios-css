@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dia 07</title>
-    <link rel="stylesheet" href="dia-07.css">
+    <title>Meu Modal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="flip-container"
-ontouchstart="this.classList.toggle('hover');">  	
-  <div class="flipper">  		
-    <div class="front">  			
-      <p>ABACAXI</p> 		
-    </div>  		
-    <div class="back">  			
-      <p>BANANA</p>		
-    </div>  	
-  </div>  
-</div>
+    <a href="#abrirBilhete" class="abrir">Bilhete</a>
+    <div id="abrirBilhete" class="bilhete">
+        <a href="#fechar" title="Fechar" class="fechar">X</a>
+        <h2>Esse bilhete é verdadeiro!</h2>
+        <p>Não procure por motivação, tenha diciplina!</p>
+        <p>&#128140;</p>
+    </div>
 </body>
 </html>

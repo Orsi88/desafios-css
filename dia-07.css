@@ -1,32 +1,94 @@
-/* O container geral define a perspectiva */  
-.flip-container { perspective: 1000; }  	
+@charset "UTF-8";
 
-/* vira os containers frente e verso quando o mouse passa em cima */
-.flip-container:hover .flipper, .flip-container.hover .flipper {  		
-  transform: rotateY(180deg);  	
-}    
-.flip-container, .front, .back {  	
-  width: 320px;  	
-  height: 480px;  
+* {
+    margin: 0;
+    padding: 0;
 }
 
-/* define a velocidade da transição */
-.flipper {  	
-  transition: 0.6s;  	
-  transform-style: preserve-3d;    	
-  position: relative;  
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: url('img/1164606.png');
+    background-size: cover;
+    background-position: bottom;
 }
-    
-/* esconde o verso durante a animação */
-.front, .back {  	
-  backface-visibility: hidden;    	
-  position: absolute;  	
-  top: 0;  	
- left: 0;  
-}
-    
-/* frente posicionada sobre o verso */
-.front { z-index: 2; background-color: aquamarine; }    
 
-/* verso inicialmente escondido */
-.back { transform: rotateY(180deg); background-color: brown;}
+.bilhete {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    opacity: 0;
+    z-index: 99999;
+    transition: opacity 0.4s ease-in;
+    pointer-events: none;
+    margin: auto;
+}
+
+.bilhete:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.abrir, #abrirBilhete {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#abrirBilhete {
+    width: 600px;
+    height: 300px;
+    flex-direction: column;
+    padding: 20px;
+    background-color: blanchedalmond;
+
+}
+
+#abrirBilhete h2 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1.3px;
+}
+
+#abrirBilhete p {
+    font-size: 25px;
+    font-weight: 400;
+    margin: 70px 0px 10px 0px;
+}
+
+.abrir {
+    height: 100px;
+    width: 300px;
+    background-color: rgba(127, 255, 212, 0.596);
+    font-size: 50px;
+    color: white;
+    font-weight: 200;
+    transition: all 0.2s ease;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.329);
+}
+
+.abrir:hover {
+    opacity: 60%;
+}
+
+.fechar {
+    margin-left: 95%;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    width: 30px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    border-radius: 50%;
+}
