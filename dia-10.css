@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/1224149.png');
+    background-size: cover;
+}
+div.bloco-notas{
+    width: 330px;
+    height: 260px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.item-lista {
+    width: 30px;
+    height: 30px;
+    border: solid 3px bla;
+    margin-left: 10px;
+}
+
+.item-nota {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.item-nota label {
+    margin-left: 20px;
+}
+
+.linha {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
