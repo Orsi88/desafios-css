@@ -14,10 +14,50 @@ body {
     background-image: url('img/1224149.png');
     background-size: cover;
 }
+
+input[type=checkbox i] {
+   
+}
+
+.nota {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bloco {
+    width: 30px;
+    height: 30px;
+    border: solid 3px rgb(194, 19, 210);
+    border-radius: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+input[type=checkbox]:checked + label .check {
+    display: block;
+}
+
+.check {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    font-size: 30px;
+    bottom: 5px;
+    display: none;
+}
+
+.risco {
+
+}
+
 div.bloco-notas{
     width: 330px;
     height: 260px;
-    background-color: white;
+    background-color: rgb(254, 227, 192);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -25,13 +65,6 @@ div.bloco-notas{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     border-radius: 5px;
-}
-
-.item-lista {
-    width: 30px;
-    height: 30px;
-    border: solid 3px bla;
-    margin-left: 10px;
 }
 
 .item-nota {

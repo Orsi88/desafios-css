@@ -12,6 +12,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-image: url('img/966315.png');
+    background-size: cover;
 }
 
 input[type="radio" i] {
@@ -55,11 +57,6 @@ input[type="radio" i] {
     background-color: rgb(90, 6, 169);
 }
 
-.jogo-velha input[type="radio"]:checked + label {
-    cursor: default;
-    z-index: 10 !important;
-}
-
 /*jogadores*/
 
 input[type="radio"].jogador-1 + label::after{
@@ -86,11 +83,12 @@ input[type="radio"].jogador-1:checked + label::after {
 input[type="radio"].jogador-2 + label::after{
     content: "O";
     color: white;
+    opacity: 0;
 }
 
 .jogo-velha input[type="radio"].jogador-2:checked + label {
     background-color: darkcyan;
-    opacity: 0;
+    
 }
 
 input[type="radio"].jogador-2:hover + label::after {
@@ -451,8 +449,14 @@ input[type="radio"]#bloco9-C3 + label{
     top: 210px;
     left: 210px;
 }
+
 /*rodadas*/
 
+.jogo-velha input[type="radio"]:checked + label {
+    cursor: default;
+    z-index: 10 !important;
+    border-radius: 50%;
+}
 
 .jogo-velha input[type="radio"].rodada-1 + label{
     display: block;
