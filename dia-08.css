@@ -17,8 +17,8 @@ body {
 }
 
 .jogo-velha {
-    height: 300px;
-    width: 300px;
+    height: 600px;
+    width: 600px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -128,22 +128,22 @@ body {
 /*posicionamento-blocos*/
 
 .jogo-velha input[type="radio"].left + label {
-    left: 0;
+    left: 10px;
 }
 .jogo-velha input[type="radio"].top + label {
-    top: 0;
+    top: 10px;
 }
 .jogo-velha input[type="radio"].middle + label {
-    left: 100px;
+    left: 205px;
 }
 .jogo-velha input[type="radio"].right + label {
-    left: 200px;
+    left: 400px;
 }
 .jogo-velha input[type="radio"] .center + label {
-    top: 200px;
+    top: 405px;
 }
 .jogo-velha input[type="radio"].bottom + label {
-    top: 200px;
+    top: 400px;
 }
 
 /*jogada-empate*/
@@ -209,8 +209,8 @@ body {
 }
 
 .jogo-velha label {
-    width: 90px;
-    height: 90px;
+    width: 180px;
+    height: 180px;
     background-color: rgb(253, 238, 188);
     position: absolute;
     border-radius: 10px;
@@ -218,9 +218,7 @@ body {
     transition: 0.3s;
     margin: 5px;
     display: none;
-    
 }
-
 
 .jogo-velha label:after  {
     font-family: Arial, Helvetica, sans-serif;
@@ -231,8 +229,8 @@ body {
     border-radius: 10px;
     display: flex;
     justify-content: center;
-    margin-top: 16px;
-    transition: 0.3s;
+    margin-top: 20px;
+    transition: bacground 0.8s;
 }
 
 .jogo-velha label:hover {
@@ -245,14 +243,15 @@ body {
 
 .jogo-velha  label:after {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 40px;
+    font-size: 100px;
     color: black;
+    transition: 1s;
 }
 
 .jogo-velha .fim {
-    width: 300px;
-    height: 300px;
-    background-color: rgba(255, 119, 119, 0.905);
+    width: 600px;
+    height: 600px;
+    background-color: rgba(249, 219, 172, 0.908);
     color: black;
     display: none;
     position: absolute;
@@ -263,29 +262,31 @@ body {
 
 .jogo-velha h3 {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
-    font-size: 30px;
+    font-weight: 600;
+    font-size: 60px;
     position: absolute;
-    top: 50px;
-    left: 15px;
+    top: 140px;
+    left: 30px;
+    color: rgb(152, 5, 5);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.735);
 }
 
 .jogo-velha .fim a {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    width: 100px;
-    height: 50px;
-    background-color: crimson;
+    width: 200px;
+    height: 80px;
+    background-color: brown;
     border-radius: 4px;
     color: #fff;
     text-decoration: none;
     transition: 0.2s;
     position: absolute;
-    top: 150px;
-    left: 100px;
+    top: 300px;
+    left: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 30px;
 
   }
   .jogo-velha .fim a:hover {

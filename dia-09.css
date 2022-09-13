@@ -11,7 +11,8 @@
 body {
     width: 100%;
     height: 100vh;
-    background-color: darkslategrey;
+    background-image: url('img/966315.png');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,11 +20,23 @@ body {
     text-align: center;
 }
 
+.papel {
+    width: 800px;
+    height: 300px;
+    background-color: rgba(183, 117, 250, 0.734);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
 p {
     font-family: 'IBM Plex Mono', monospace;
-    color:  white;
+    color:  rgb(250, 250, 250);
     font-size: 30px;
     display: block;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.712);
 }
 
 .line {

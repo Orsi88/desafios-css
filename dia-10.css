@@ -137,8 +137,8 @@ input[type="checkbox"]:checked ~ p {
 .risco {
     width: 0.01px;
     height: 3px;
-    margin-left: 37px;
-    background-image: linear-gradient(left,blue, red);
+    margin-left: 36px;
+    background-image: linear-gradient(to right, rgb(194, 19, 210), rgb(210, 19, 99));
     position: absolute;
     animation: riscando-volta 1s ease-in-out;
     margin-bottom: 2px;
