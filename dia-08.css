@@ -48,6 +48,10 @@ body {
     opacity: 1;
 }
 
+.jogo-velha input[type="radio"].jogador-2:checked + label:after, .jogo-velha input[type="radio"] .jogador-1:checked + label:after {
+    opacity: 1;
+}
+
 /*cor-jogador*/
 
 .jogo-velha input[type="radio"].jogador-1:checked +label{
@@ -180,27 +184,27 @@ body {
 
 /*jogadas-jogador-2*/
 
-.jogo-velha .jogador-2.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .fim,
-.jogo-velha .jogador-2.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .fim,
-.jogo-velha .jogador-2.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .fim,
-.jogo-velha .jogador-2.linha-1:checked ~ .jogador-1.linha-1:checked ~ .jogador-1.linha-1:checked ~ .fim,
-.jogo-velha .jogador-2.linha-2:checked ~ .jogador-1.linha-2:checked ~ .jogador-1.linha-2:checked ~ .fim,
-.jogo-velha .jogador-2.linha-3:checked ~ .jogador-1.linha-3:checked ~ .jogador-1.linha-3:checked ~ .fim,
-.jogo-velha .jogador-2.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .fim,
-.jogo-velha .jogador-2.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .fim {
+.jogo-velha .jogador-2.coluna-1:checked ~ .jogador-2.coluna-1:checked ~ .jogador-2.coluna-1:checked ~ .fim,
+.jogo-velha .jogador-2.coluna-2:checked ~ .jogador-2.coluna-2:checked ~ .jogador-2.coluna-2:checked ~ .fim,
+.jogo-velha .jogador-2.coluna-3:checked ~ .jogador-2.coluna-3:checked ~ .jogador-2.coluna-3:checked ~ .fim,
+.jogo-velha .jogador-2.linha-1:checked ~ .jogador-2.linha-1:checked ~ .jogador-2.linha-1:checked ~ .fim,
+.jogo-velha .jogador-2.linha-2:checked ~ .jogador-2.linha-2:checked ~ .jogador-2.linha-2:checked ~ .fim,
+.jogo-velha .jogador-2.linha-3:checked ~ .jogador-2.linha-3:checked ~ .jogador-2.linha-3:checked ~ .fim,
+.jogo-velha .jogador-2.diagonal-1:checked ~ .jogador-2.diagonal-1:checked ~ .jogador-2.diagonal-1:checked ~ .fim,
+.jogo-velha .jogador-2.diagonal-2:checked ~ .jogador-2.diagonal-2:checked ~ .jogador-2.diagonal-2:checked ~ .fim {
     display: block;
 }
 
 /*------------------------------------*/
 
-.jogo-velha .jogador-2.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .fim h3:before,
-.jogo-velha .jogador-2.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .fim h3:before,
-.jogo-velha .jogador-2.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .fim h3:before,
-.jogo-velha .jogador-2.linha-1:checked ~ .jogador-1.linha-1:checked ~ .jogador-1.linha-1:checked ~ .fim h3:before,
-.jogo-velha .jogador-2.linha-2:checked ~ .jogador-1.linha-2:checked ~ .jogador-1.linha-2:checked ~ .fim h3:before,
-.jogo-velha .jogador-2.linha-3:checked ~ .jogador-1.linha-3:checked ~ .jogador-1.linha-3:checked ~ .fim h3:before,
-.jogo-velha .jogador-2.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .fim h3:before,
-.jogo-velha .jogador-2.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .fim h3:before{
+.jogo-velha .jogador-2.coluna-1:checked ~ .jogador-2.coluna-1:checked ~ .jogador-2.coluna-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.coluna-2:checked ~ .jogador-2.coluna-2:checked ~ .jogador-2.coluna-2:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.coluna-3:checked ~ .jogador-2.coluna-3:checked ~ .jogador-2.coluna-3:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.linha-1:checked ~ .jogador-2.linha-1:checked ~ .jogador-2.linha-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.linha-2:checked ~ .jogador-2.linha-2:checked ~ .jogador-2.linha-2:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.linha-3:checked ~ .jogador-2.linha-3:checked ~ .jogador-2.linha-3:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.diagonal-1:checked ~ .jogador-2.diagonal-1:checked ~ .jogador-2.diagonal-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.diagonal-2:checked ~ .jogador-2.diagonal-2:checked ~ .jogador-2.diagonal-2:checked ~ .fim h3:before{
     content: "O jogador 2 venceu!" !important;
 }
 
@@ -211,27 +215,32 @@ body {
     position: absolute;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.6s;
+    transition: 0.3s;
     margin: 5px;
+    display: none;
     
 }
 
 
-
-
 .jogo-velha label:after  {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: aquamarine;
     font-size: 40px;
-
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    transition: 0.3s;
 }
 
 .jogo-velha label:hover {
-    opacity: 50%;
+    background-color: brown;
 }
 
 .jogo-velha  label:hover:after {
-
+    opacity: 90%;
 }
 
 .jogo-velha  label:after {
@@ -239,3 +248,48 @@ body {
     font-size: 40px;
     color: black;
 }
+
+.jogo-velha .fim {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 119, 119, 0.905);
+    color: black;
+    display: none;
+    position: absolute;
+    text-align: center;
+    z-index: 11;
+    border-radius: 10px;
+}
+
+.jogo-velha h3 {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    position: absolute;
+    top: 50px;
+    left: 15px;
+}
+
+.jogo-velha .fim a {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100px;
+    height: 50px;
+    background-color: crimson;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+
+  }
+  .jogo-velha .fim a:hover {
+    background-color: orangered;
+    cursor: pointer;
+  }
+  
