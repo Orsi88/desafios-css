@@ -15,8 +15,8 @@ body {
     background-size: cover;
 }
 
-input[type=checkbox i] {
-   
+input[type="checkbox" i] {
+   display: none;
 }
 
 .nota {
@@ -35,23 +35,141 @@ input[type=checkbox i] {
     display: flex;
     justify-content: center;
     text-align: center;
+    animation: circulando-volta 1s ease-in;
+    animation-fill-mode: forwards;
 }
 
-input[type=checkbox]:checked + label .check {
-    display: block;
+input[type="checkbox"]:checked ~ .bloco{
+    border-radius: 50%;
+    animation: circulando 1.2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+input[type="checkbox"]:checked ~ .check {
+    color: rgb(194, 19, 210);
+}
+
+p {
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked ~ p {
+    opacity: 50%;
+}
+
+@keyframes circulando {
+    
+    0% {
+        border-radius: 50%;
+        border: solid 3px rgb(194, 19, 210);
+    }
+
+    10% {
+        border-right-color: rgba(0, 0, 0, 0);
+    }
+
+    20% {
+        border-top-color: rgba(0, 0, 0, 0);
+    }
+
+    30% {
+        border-left-color:  rgba(0, 0, 0, 0);   
+    }
+    40% {
+        border-bottom-color: rgba(0, 0, 0, 0);
+    }
+    50% {
+        border-style: dotted;
+        border-color: rgb(194, 19, 210);
+    }
+    60% {
+        transform: scale(1.2);
+        border-style: dotted;
+        border-color:rgb(194, 19, 210);
+    }
+    100% {
+        transform: scale(1.2);
+        border-style: dotted;
+        border-color:  rgb(254, 227, 192);
+    }
+}
+
+@keyframes circulando-volta {
+    
+    0% {
+        border-color:  rgb(254, 227, 192);
+        
+    }
+    10% {
+        border-right-color: rgba(194, 19, 210, 0.099);
+    }
+    20% {
+        border-right-color:  rgba(194, 19, 210, 0.591);
+        border-bottom-color: rgba(194, 19, 210, 0.125);
+    }
+    30% {
+        border-right-color:  rgb(194, 19, 210);
+        border-bottom-color:  rgb(194, 19, 210);
+        border-left-color:  rgba(194, 19, 210, 0.247);
+    }
+    40% {
+        border-right-color:  rgb(194, 19, 210);
+        border-bottom-color:  rgb(194, 19, 210);
+        border-left-color:  rgb(194, 19, 210);
+        border-top-color: rgba(194, 19, 210, 0.247);
+    }
+    100% {
+        border: solid 3px rgb(194, 19, 210); 
+    }
 }
 
 .check {
     width: 30px;
     height: 30px;
-    position: relative;
-    font-size: 30px;
-    bottom: 5px;
-    display: none;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    position: absolute;
+    font-size: 25px;
+    color: rgba(194, 19, 210, 0);
+    transition: 0.5s;
 }
 
 .risco {
+    width: 0.01px;
+    height: 3px;
+    margin-left: 37px;
+    background-color: rgb(194, 19, 210);
+    position: absolute;
+    animation: riscando-volta 1s ease-in-out;
+    margin-bottom: 2px;
+}
 
+input[type="checkbox"]:checked ~ .risco {
+    animation: riscando 1s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes riscando {
+    
+    from {
+        width: 0px;
+    }
+
+    to {
+        width: 280px;
+    }
+}
+
+@keyframes riscando-volta {
+    
+    from {
+        width: 280px;
+    }
+
+    to {
+        width: 0px;
+    }
 }
 
 div.bloco-notas{

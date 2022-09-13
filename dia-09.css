@@ -37,7 +37,6 @@ p {
 }
 
 
-
 @keyframes maquina {
     from {
         width: 0px;
@@ -56,4 +55,3 @@ p {
         border-right-color: transparent;
     }
 }
-

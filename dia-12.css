@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+}
+
+.mesa-centro {
+    overflow: hidden;
+    position: absolute;
+    width: 60vw;
+    height: 80vh;
+    background-color: rgb(81, 18, 18);
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.704);
+}
+
+input[type="radio" i] {
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.lista {
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.bloco-texto {
+    width: 25vw;
+    height: 14vh;
+    position: absolute;
+    background-color: antiquewhite;
+    cursor: pointer;
+    clip-path: polygon(0% 0%, 80% 0%, 100% 50%, 80% 100%, 0% 100%);
+    z-index: 2;
+    left: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+p {
+    width: 15vw;
+    font-size: 2.5vh;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    
+}
+
+.text {
+    margin-right: 2.5vw;
+}
+
+.num {
+    width: 20px;
+    font-size: 5vh;
+}
+
+#texto-1 {
+    top: 2.5vh;
+}
+#texto-2 {
+    top: 17.7vh;
+}
+#texto-3 {
+    top: 32.9vh;
+}
+#texto-4 {
+    top: 48.1vh;
+}
+#texto-5 {
+    top: 63.3vh;
+}
+
+.bloco-img {
+    width: 30vw;
+    height: 70vh;
+    position: absolute;
+    top: 5vh;
+    left: -30vw;
+    transition-duration: 0.6s;
+}
+
+#bloco-1 {
+    background-image: url('img/1164606.png');
+    background-size: cover;
+    z-index: 0;
+}
+#bloco-2 {
+    background-image: url('img/1164607.png');
+    background-size: cover;
+    z-index: 0;
+}
+#bloco-3 {
+    background-image: url('img/1224149.png');
+    background-size: cover;
+    z-index: 0;
+}
+#bloco-4 {
+    background-image: url('img/943385.png');
+    background-size: cover;
+    z-index: 0;
+}
+#bloco-5 {
+    background-image: url('img/705837.png');
+    background-size: cover;
+    z-index: 0;
+}
+
+#item-1:checked ~ #bloco-1 {
+    left: 28vw;
+    z-index: 1;
+} 
+#item-2:checked ~ #bloco-2 {
+    left: 28vw;
+}
+#item-3:checked ~ #bloco-3 {
+    left: 28vw;
+} 
+#item-4:checked ~ #bloco-4 {
+    left: 28vw;
+}
+#item-5:checked ~ #bloco-5 {
+    left: 28vw;
+} 
