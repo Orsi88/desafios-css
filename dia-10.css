@@ -138,7 +138,7 @@ input[type="checkbox"]:checked ~ p {
     width: 0.01px;
     height: 3px;
     margin-left: 37px;
-    background-color: rgb(194, 19, 210);
+    background-image: linear-gradient(left,blue, red);
     position: absolute;
     animation: riscando-volta 1s ease-in-out;
     margin-bottom: 2px;
@@ -157,14 +157,14 @@ input[type="checkbox"]:checked ~ .risco {
     }
 
     to {
-        width: 280px;
+        width: 270px;
     }
 }
 
 @keyframes riscando-volta {
     
     from {
-        width: 280px;
+        width: 270px;
     }
 
     to {
