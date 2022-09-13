@@ -10,4 +10,232 @@ body {
     height: 100vh;
     background-image: url('img/943385.png');
     background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.jogo-velha {
+    height: 300px;
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.jogo-velha input[type="radio"] {
+    display: none;
+}
+
+.jogo-velha input[type="radio"]:checked + label {
+    cursor: default;
+    z-index: 10 !important;
+}
+
+/*representante-jogador*/
+
+.jogo-velha input[type="radio"].jogador-1 +label:after{
+    content: "X";
+}
+.jogo-velha input[type="radio"].jogador-2 +label:after{
+    content: "O";
+}
+
+.jogo-velha input[type="radio"].jogador-1:checked + label:after, .jogo-velha input[type="radio"] .jogador-2:checked + label:after {
+    opacity: 1;
+}
+
+/*cor-jogador*/
+
+.jogo-velha input[type="radio"].jogador-1:checked +label{
+   background-color: cadetblue; 
+}
+.jogo-velha input[type="radio"].jogador-2:checked +label{
+    background-color: orange;
+}
+
+/*sobreposições*/
+
+.jogo-velha input[type="radio"].parte-1 + label {
+    z-index: 1;
+}
+.jogo-velha input[type="radio"].parte-2 + label {
+    z-index: 2;
+}
+.jogo-velha input[type="radio"].parte-3 + label {
+    z-index: 3;
+}
+.jogo-velha input[type="radio"].parte-4 + label {
+    z-index: 4;
+}
+.jogo-velha input[type="radio"].parte-5 + label {
+    z-index: 5;
+}
+.jogo-velha input[type="radio"].parte-6 + label {
+    z-index: 6;
+}
+.jogo-velha input[type="radio"].parte-7 + label {
+    z-index: 7;
+}
+.jogo-velha input[type="radio"].parte-8 + label {
+    z-index: 8;
+}
+.jogo-velha input[type="radio"].parte-9 + label {
+    z-index: 9;
+}
+
+/*aparece-bloco*/
+
+.jogo-velha input[type="radio"].parte-1 + label {
+    display: block;
+}
+
+.jogo-velha input[type="radio"].parte-1:checked ~ .parte-2 + label {
+    display: block;
+}
+.jogo-velha input[type="radio"].parte-1:checked ~ .parte-2 + label {
+    display: block;
+}
+.jogo-velha input[type="radio"].parte-2:checked ~ .parte-3 + label {
+    display: block;
+}
+.jogo-velha input[type="radio"].parte-3:checked ~ .parte-4 + label {
+    display: block;
+}
+.jogo-velha input[type="radio"].parte-4:checked ~ .parte-5 + label {
+    display: block;
+}
+.jogo-velha input[type="radio"].parte-5:checked ~ .parte-6 + label {
+    display: block;
+}
+.jogo-velha input[type="radio"].parte-6:checked ~ .parte-7 + label {
+    display: block;
+}
+.jogo-velha input[type="radio"].parte-7:checked ~ .parte-8 + label {
+    display: block;
+}
+.jogo-velha input[type="radio"].parte-8:checked ~ .parte-9 + label {
+    display: block;
+}
+
+/*posicionamento-blocos*/
+
+.jogo-velha input[type="radio"].left + label {
+    left: 0;
+}
+.jogo-velha input[type="radio"].top + label {
+    top: 0;
+}
+.jogo-velha input[type="radio"].middle + label {
+    left: 100px;
+}
+.jogo-velha input[type="radio"].right + label {
+    left: 200px;
+}
+.jogo-velha input[type="radio"] .center + label {
+    top: 200px;
+}
+.jogo-velha input[type="radio"].bottom + label {
+    top: 200px;
+}
+
+/*jogada-empate*/
+
+.jogo-velha input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~.fim {
+    display: block;
+}
+.jogo-velha input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~ input[type="radio"]:checked ~.fim > h3:before {
+    content: Empate!;
+}
+
+/*jogadas-jogador-1*/
+
+.jogo-velha .jogador-1.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .fim,
+.jogo-velha .jogador-1.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .fim,
+.jogo-velha .jogador-1.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .fim,
+.jogo-velha .jogador-1.linha-1:checked ~ .jogador-1.linha-1:checked ~ .jogador-1.linha-1:checked ~ .fim,
+.jogo-velha .jogador-1.linha-2:checked ~ .jogador-1.linha-2:checked ~ .jogador-1.linha-2:checked ~ .fim,
+.jogo-velha .jogador-1.linha-3:checked ~ .jogador-1.linha-3:checked ~ .jogador-1.linha-3:checked ~ .fim,
+.jogo-velha .jogador-1.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .fim,
+.jogo-velha .jogador-1.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .fim {
+    display: block;
+}
+
+/*------------------------------------*/
+
+.jogo-velha .jogador-1.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-1.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .fim h3:before,
+.jogo-velha .jogador-1.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .fim h3:before,
+.jogo-velha .jogador-1.linha-1:checked ~ .jogador-1.linha-1:checked ~ .jogador-1.linha-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-1.linha-2:checked ~ .jogador-1.linha-2:checked ~ .jogador-1.linha-2:checked ~ .fim h3:before,
+.jogo-velha .jogador-1.linha-3:checked ~ .jogador-1.linha-3:checked ~ .jogador-1.linha-3:checked ~ .fim h3:before,
+.jogo-velha .jogador-1.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-1.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .fim h3:before{
+    content: "O jogador 1 venceu!" !important;
+}
+
+
+/*jogadas-jogador-2*/
+
+.jogo-velha .jogador-2.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .fim,
+.jogo-velha .jogador-2.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .fim,
+.jogo-velha .jogador-2.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .fim,
+.jogo-velha .jogador-2.linha-1:checked ~ .jogador-1.linha-1:checked ~ .jogador-1.linha-1:checked ~ .fim,
+.jogo-velha .jogador-2.linha-2:checked ~ .jogador-1.linha-2:checked ~ .jogador-1.linha-2:checked ~ .fim,
+.jogo-velha .jogador-2.linha-3:checked ~ .jogador-1.linha-3:checked ~ .jogador-1.linha-3:checked ~ .fim,
+.jogo-velha .jogador-2.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .fim,
+.jogo-velha .jogador-2.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .fim {
+    display: block;
+}
+
+/*------------------------------------*/
+
+.jogo-velha .jogador-2.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .jogador-1.coluna-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .jogador-1.coluna-2:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .jogador-1.coluna-3:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.linha-1:checked ~ .jogador-1.linha-1:checked ~ .jogador-1.linha-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.linha-2:checked ~ .jogador-1.linha-2:checked ~ .jogador-1.linha-2:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.linha-3:checked ~ .jogador-1.linha-3:checked ~ .jogador-1.linha-3:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .jogador-1.diagonal-1:checked ~ .fim h3:before,
+.jogo-velha .jogador-2.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .jogador-1.diagonal-2:checked ~ .fim h3:before{
+    content: "O jogador 2 venceu!" !important;
+}
+
+.jogo-velha label {
+    width: 90px;
+    height: 90px;
+    background-color: rgb(253, 238, 188);
+    position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.6s;
+    margin: 5px;
+    
+}
+
+
+
+
+.jogo-velha label:after  {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aquamarine;
+    font-size: 40px;
+
+}
+
+.jogo-velha label:hover {
+    opacity: 50%;
+}
+
+.jogo-velha  label:hover:after {
+
+}
+
+.jogo-velha  label:after {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    color: black;
 }
