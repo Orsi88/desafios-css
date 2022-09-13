@@ -68,27 +68,27 @@ img {
 a {
     text-decoration: none;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
+    color: rgba(251, 251, 251, 0.824);
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 #facebook {
-    background-color: darkmagenta;
+    background-color: rgb(205, 67, 255);
 }
 
 #twitter {
-    background-color: blueviolet;
+    background-color: rgb(250, 16, 164);
 }
 
 #linkedin {
-    background-color: palevioletred;
+    background-color: rgb(248, 77, 148);
 }
 
 #discord {
-    background-color: orangered;
+    background-color: rgb(245, 38, 79);
 }
 
 #github {
-    background-color: orange;
+    background-color: rgb(242, 78, 38);
 }
