@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.moldura {
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.coronha {
+    width: 110px;
+    height: 80px;
+    background-color: rgb(229, 171, 46);
+    border-radius: 25px 25px 2px 2px;
+    position: absolute;
+    top: 129px;
+    border-left: solid 10px rgba(151, 74, 19, 0.247);
+    border-right: solid 10px rgba(151, 74, 19, 0.252);
+    z-index: 2;
+}
+
+.cabo {
+    padding-top: 8px;
+    width: 125px;
+    height: 555px;
+    background-color: white;
+    border: solid 1px rgba(0, 0, 0, 0.187);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 203px;
+    box-shadow: inset 6px 0px 10px rgba(0, 0, 0, 0.665);
+    
+}
+
+.ornamento {
+    width: 85px;
+    height: 54px;
+    background-color: black;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.colar {
+    width: 115px;
+    height: 40px;
+    background-color: rgb(229, 171, 46);
+    position: absolute;
+    top: 550px;
+    z-index: 2;
+    border-radius: 1px 1px 25% 25%;
+    border-left: solid 8px rgba(151, 74, 19, 0.277);
+    border-right: solid 8px rgba(151, 74, 19, 0.219);
+}
+.guarda {
+    position: absolute;
+    top: 565px;
+    left: -90px;
+    z-index: 1;
+
+}
+.guarda .fora{
+    width: 300px;
+    height: 70px;
+    background-color: rgb(229, 171, 46);
+    border-radius: 20% 20% 40% 40%;
+    position: absolute;
+    border-bottom: solid 3px rgba(142, 70, 19, 0.194);
+    z-index: 1;
+}
+
+.borda-1 {
+    width: 300px;
+    height: 34px;
+    border-bottom: solid 7px    rgb(209, 155, 40);
+    border-top: solid 10px rgb(209, 155, 40);
+    border-radius: 45%;
+    position: absolute;
+    top: -8px;
+    z-index: 3;
+}
+
+.guarda .dentro {
+    width: 270px;
+    height: 110px;
+    background-color: rgba(92, 74, 46, 0.277);
+    clip-path: ellipse(50% 15% at 50% 50%);
+    position: absolute;
+    top: -35px;
+    margin-left: 15px;
+    z-index: 1;
+    box-shadow: inset 60px 15px 80px rgba(0, 0, 0, 0.543);
+
+}
+.espacadores {
+    width: 130px;
+    height: 30px;
+    background-color: rgb(218, 163, 44);
+    position: absolute;
+    top: 632px;
+    z-index: 0;
+    border-radius: 5px;
+    border-left: solid 8px rgba(151, 74, 19, 0.186);
+    border-right: solid 8px rgba(151, 74, 19, 0.139);
+
+}
+
+.lamina {
+    width: 135px;
+    height: 600px;
+    background-color: rgb(3, 3, 3);
+    position: absolute;
+    top: 820px;
+    z-index: -1;
+
+}
+.chanfro-1 {
+    width: 130px;
+    height: 500px;
+    border-right: solid 8px rgba(0, 0, 0, 0.319);
+    border-radius: 20%;
+    margin-top: 80px;
+    margin-left: -95px;
+    position: absolute;
+}
+
+.chanfro-2 {
+    width: 130px;
+    height: 500px;
+    border-right: solid 4px rgb(98, 98, 98);
+    border-radius: 20%;
+    margin-left: -2px;
+    position: absolute;
+    z-index: -1;
+}
+
+.desenho {
+    margin-left: 170px;
+    margin-top: -20px;
+    position: absolute;
+}
+
+.desenho-corte {
+    width: 50px;
+    height: 100px;
+    background-color: rgb(212, 212, 212);
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    margin-top: -20px;
+    border-right: solid 10px rgb(212, 212, 212);
+    
+}
+
+.bainha {
+    width: 180px;
+    height: 600px;
+    background-color: rgb(253, 244, 218);
+    position: absolute;
+    top: 880px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 6px 0px 10px rgba(94, 63, 1, 0.734);
+}
+
+.boca-1 {
+    width: 190px;
+    height: 60px;
+    background-color:   rgb(218, 163, 44);
+    position: absolute;
+    top: -8px;
+    z-index: -2;
+    border-radius: 15%;
+    
+}
+
+.boca-2 {
+    width: 170px;
+    height: 60px;
+    background-color:  rgb(218, 163, 44);
+    position: absolute;
+    border-radius: 0px 0px 20% 20%;
+    border-left: solid 8px rgba(151, 74, 19, 0.221);
+    border-right: solid 8px rgba(151, 74, 19, 0.251);
+}
+
+.borda-2 {
+    width: 200px;
+    height: 60px;
+    border-bottom: solid 8px rgba(182, 126, 15, 0.815);
+    border-radius: 20%;
+    margin-top: -56px;
+    z-index: 3;
+}
+
+.corda {
+
+}
