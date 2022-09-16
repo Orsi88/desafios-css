@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.fundo {
+    width: 100%;
+    min-height: 200vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    
+}
+input[type="checkbox" i]{
+    display: none;
+}
+
+input[type="checkbox" i]:checked + .fundo {
+    background-color: rgb(26, 26, 26);
+}
+
+.claro-escuro {
+    position: fixed;
+    left: 1px;
+    margin: 20px;
+    width: 60px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: blueviolet;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.muda {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: rgb(26, 26, 26);
+    z-index: 1;
+    left: 0px;
+}
+
+.claro-escuro:before {
+    content: "🌞";
+    z-index: 0;
+}
+
+.claro-escuro:after {
+    content: "🌙";
+    z-index: 0;
+}
+
+input[type="checkbox"]:checked ~ .fundo .claro-escuro {
+    background-color: cadetblue;
+}
+
+input[type="checkbox"]:checked ~ .fundo .claro-escuro .muda {
+    left: 30px;
+    background-color: whitesmoke;
+}
+
+input[type="checkbox" i]:checked ~ .fundo h1{
+    color: rgb(169, 169, 169);
+}
+
+input[type="checkbox" i]:checked ~ .fundo p{
+    color: cadetblue;
+}
+
+input[type="checkbox" i]:checked ~ .fundo a{
+    color: rgb(169, 169, 169);
+}
+
+input[type="checkbox" i]:checked ~ .fundo a:hover{
+    color: cornflowerblue;
+}
+
+h1 {
+    font-weight: 200;
+    font-size: 50px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    color: black;
+}
+
+p {
+    letter-spacing: 3px;
+    color: blueviolet;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+a:hover {
+    color: brown;
+    
+}
+
+.imagens {
+    position: absolute;
+    top: 25vh;
+    width: 60vw;
+    height: 70vh;
+}
+
+.img-aleatoria-1 {
+    position: absolute;
+    left: 0;
+    width: 60vw;
+    height: 70vh;
+    background-image: url('img/910289.jpg');
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.img-aleatoria-2 {
+    position: absolute;
+    left: 0;
+    top: 90vh;
+    width: 60vw;
+    height: 70vh;
+    background-image: url('img/932871.jpg');
+    background-size: cover;
+    border-radius: 5px;
+}
+
+

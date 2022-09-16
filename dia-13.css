@@ -22,10 +22,109 @@ body {
     overflow: hidden;
 }
 
+input[type="checkbox" i] {
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.caixa-ambiente {
+    position: absolute;
+    width: 4em;
+    height: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: giro-caixa-ambiente-volta 1s ease;
+}
+
+input[type="checkbox"]:checked ~ .caixa-ambiente  {
+    animation: giro-caixa-ambiente 1s ease;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes giro-caixa-ambiente{
+
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+
+}
+
+@keyframes giro-caixa-ambiente-volta {
+    0% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+input[type="checkbox"]:checked ~ .caixa-ambiente .caixa-maior {
+    animation: caixa-maior-some 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    transform: rotateY(0deg);
+}
+
+
+@keyframes caixa-maior-some {
+    0% {
+        bottom: -1em;
+    }
+    100% {
+        bottom: 20em;
+    }
+}
+
+input[type="checkbox"]:checked ~ .caixa-ambiente .caixa-maior-2 {
+    animation: caixa-maior-2-some 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    transform: rotateY(0deg);
+}
+
+@keyframes caixa-maior-2-some {
+    0% {
+        bottom: -1.9em;
+    }
+    100% {
+        bottom: -20em;
+    }
+}
+
+input[type="checkbox"]:checked ~ .caixa-ambiente .escondida {
+    display: block;
+    animation: escondida-flutuante 3s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes escondida-flutuante {
+    0%, 100% {
+        left: 1em;
+    }
+    50% {
+        left: 0.6em;
+    }
+}
+
 .ambiente {
     position: relative;
     transform-style: preserve-3d;
     animation: ambiente-flutua var(--rotateSpeed) infinite linear reverse, vira-volta 0.5s ease-in-out;
+}
+
+input[type="checkbox"]:checked ~ .caixa-ambiente .caixa-menor {
+    display: none;
 }
 
 .ambiente:hover {
@@ -114,10 +213,10 @@ body {
 
 .front {
     transform: translateZ(1em);
-    background-color:rgb(237, 90, 163);
+    background-color:#c2b6e2;
 }
 .rigth{
-    background-color: pink;
+    background-color: white;
     transform: 
         rotateY(90deg)
         translateZ(1em);
@@ -127,13 +226,13 @@ body {
     align-items: center;
 }
 .back{
-    background-color: rgb(237, 90, 163);
+    background-color: #c2b6e2;
     transform: 
         rotateY(180deg)
         translateZ(1em);
 }
 .left{
-    background-color: pink;
+    background-color: white;
     transform: 
         rotateY(270deg)
         translateZ(1em);
@@ -149,7 +248,7 @@ body {
     transform: 
         rotateX(90deg)
         translateY(0);
-    background-color: pink;
+    background-color: white;
     top: -1em;
     animation: caixa-desce-volta 1s ease-in-out;
 }
@@ -181,8 +280,6 @@ body {
     }
 }
 
-
-
 .caixa-maior-2 {
     width: 2em;
     height: 1em;
@@ -203,22 +300,22 @@ body {
 
 .front-2 {
     transform: translateZ(1em);
-    background-color: rgb(237, 90, 163);
+    background-color: #c2b6e2;
 }
 .rigth-2{
-    background-color: pink;
+    background-color: white;
     transform: 
         rotateY(90deg)
         translateZ(1em);
 }
 .back-2{
-    background-color: rgb(237, 90, 163);
+    background-color: #c2b6e2;
     transform: 
         rotateY(180deg)
         translateZ(1em);
 }
 .left-2{
-    background-color: pink;
+    background-color: white;
     transform: 
         rotateY(270deg)
         translateZ(1em);
@@ -232,7 +329,7 @@ body {
     transform: 
         rotateX(90deg)
         translateY(0);
-    background-color: pink;
+    background-color: white;
     bottom: -1.5em;   
     
 }
@@ -252,25 +349,19 @@ body {
 
 .front-3, .back-3, .left-3, .rigth-3 {
     width: 1.8em;
-    height: 3em;
+    height: 100%;
     position: absolute;
 }
 
 .front-3 {
     transform: translateZ(0.9em);
     background-color: blueviolet;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .rigth-3{
     background-color:rgb(67, 20, 197);
     transform: 
         rotateY(90deg)
         translateZ(0.9em);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .back-3{
     background-color: blueviolet;
@@ -333,13 +424,114 @@ body {
 .rigth-3 p {
     font-size: 20px;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 400;
-    margin-top: 80px;
+    margin-top: 6em;
     color: #c2b6e2;
 }
 
+.escondida {
+    height: 7em;
+    width: 1.8em;
+    bottom: 0;
+    left: 1em;
+    background-color:blueviolet;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+.graficos {
+    width: 1.7em;
+    height: 70%;
+    margin-left: 0.05em;
+    margin-top: 0.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: rotate(180deg);
+}
+
 .grafico {
-    margin-top: 80px;
     width: 100px;
     height: 100px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.desenho-grafico-1 {
+    height: 0.1em;
+    width: 1em;
+    border-radius: 10px;
+    background-color: #5222D0;
+}
+.desenho-grafico-2 {
+    height: 0.1em;
+    width: 1.5em;
+    border-radius: 10px;
+    background-color: #5222D0;
+}
+.desenho-grafico-3 {
+    right: 5px;
+    height: 0.1em;
+    width: 1.3em;
+    border-radius: 10px;
+    background-color: #5222D0;
+}
+
+input[type="checkbox"]:checked ~ .caixa-ambiente .escondida .graficos .grafico .desenho-grafico-1 {
+    animation: muda-cor-grafico 2s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+}
+input[type="checkbox"]:checked ~ .caixa-ambiente .escondida .graficos .grafico .desenho-grafico-2 {
+    animation: muda-cor-grafico 2s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+input[type="checkbox"]:checked ~ .caixa-ambiente .escondida .graficos .grafico .desenho-grafico-3 {
+    animation: muda-cor-grafico 2s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.7s;
+}
+
+@keyframes muda-cor-grafico{
+    0% {
+        background-color: #5222D0;
+    }
+    50% {
+        background-color: #c2b6e2;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+.circulo-fecha {
+    position: absolute;
+    margin: 0.4em;
+    width: 1em;
+    height: 1em;
+    background-color: #c2b6e2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(90deg);
+    
+}
+
+.circulo-fecha p {
+    color:#5222D0;
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
