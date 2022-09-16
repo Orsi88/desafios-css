@@ -4,3 +4,251 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --rotateSpeed: 3s;
+}
+
+body {
+    background-color: darkslategray;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    perspective: 10em;
+    perspective-origin: 50% calc(50% - 3em);
+    overflow: hidden;
+}
+
+.ambiente {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: ambiente-flutua var(--rotateSpeed) infinite linear reverse;
+}
+
+.ambiente:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    animation: ambiente-flutua var(--rotateSpeed) infinite linear reverse, vira 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes vira {
+    to {
+        transform: rotateY(-90deg);
+    }
+}
+
+@keyframes ambiente-flutua {
+    0%, 100% {
+        bottom: 0.3em;
+    }
+    50% {
+        bottom: 0em;
+    }
+}
+
+
+.caixa-maior {
+    width: 2em;
+    height: 4em;
+    position: absolute;
+    bottom: -1em;
+    left: -1em;
+    transform-style: preserve-3d;
+    transform: 
+        rotateY(45deg);
+    animation: caixa-sobe 0.5s ease;
+}
+
+@keyframes caixa-sobe {
+    
+}
+
+.front, .back, .left, .rigth {
+    width: 2em;
+    height: 4em;
+    position: absolute;
+    background-color: var(--boxColor);
+}
+
+.front {
+    transform: translateZ(1em);
+    background-color:rgb(237, 90, 163);
+}
+.rigth{
+    background-color: pink;
+    transform: 
+        rotateY(90deg)
+        translateZ(1em);
+}
+.back{
+    background-color: rgb(237, 90, 163);
+    transform: 
+        rotateY(180deg)
+        translateZ(1em);
+}
+.left{
+    background-color: pink;
+    transform: 
+        rotateY(270deg)
+        translateZ(1em);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    transform: 
+        rotateX(90deg)
+        translateY(0);
+    background-color: pink;
+    top: -1em;
+}
+
+
+.caixa-maior-2 {
+    width: 2em;
+    height: 1em;
+    position: absolute;
+    bottom: -1.9em;
+    left: -1em;
+    transform-style: preserve-3d;
+    transform: 
+        rotateY(45deg);
+}
+
+.front-2, .back-2, .left-2, .rigth-2 {
+    width: 2em;
+    height: 1.5em;
+    position: absolute;
+    background-color: var(--boxColor);
+}
+
+.front-2 {
+    transform: translateZ(1em);
+    background-color: rgb(237, 90, 163);
+}
+.rigth-2{
+    background-color: pink;
+    transform: 
+        rotateY(90deg)
+        translateZ(1em);
+}
+.back-2{
+    background-color: rgb(237, 90, 163);
+    transform: 
+        rotateY(180deg)
+        translateZ(1em);
+}
+.left-2{
+    background-color: pink;
+    transform: 
+        rotateY(270deg)
+        translateZ(1em);
+}
+
+.bottom-2{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    bottom: 0;
+    transform: 
+        rotateX(90deg)
+        translateY(0);
+    background-color: pink;
+    bottom: -1.5em;   
+    
+}
+
+.caixa-menor {
+    width: 2em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: -2em;
+    left: -1em;
+    transform-style: preserve-3d;
+    transform: 
+        rotateY(45deg);
+}
+
+.front-3, .back-3, .left-3, .rigth-3 {
+    width: 1.8em;
+    height: 3em;
+    position: absolute;
+}
+
+.front-3 {
+    transform: translateZ(0.9em);
+    background-color: blueviolet;
+}
+.rigth-3{
+    background-color:rgb(67, 20, 197);
+    transform: 
+        rotateY(90deg)
+        translateZ(0.9em);
+}
+.back-3{
+    background-color: blueviolet;
+    transform: 
+        rotateY(180deg)
+        translateZ(0.9em);
+}
+.left-3{
+    background-color: rgb(67, 20, 197);
+    transform: 
+        rotateY(270deg)
+        translateZ(0.9em);
+}
+
+.top-3{
+    position: absolute;
+    width: 1.8em;
+    height: 1.8em;
+    transform: 
+        rotateX(90deg)
+        translateY(0);
+    background-color: blueviolet;
+    top: -0.9em;
+}
+.bottom-3{
+    position: absolute;
+    width: 1.8em;
+    height: 1.8em;
+    transform: 
+        rotateX(90deg)
+        translateY(0);
+    background-color: blueviolet;
+    bottom: -0.9em;
+    left: 0.1em;
+    
+}
+
+.img-caixa {
+    margin-top: 70px;
+}
+
+.sombra-caixa {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    bottom: -5em;
+    transform: 
+        rotateX(90deg)
+        rotateZ(45deg)
+        translateX(-1.5em);
+    background-color: rgba(0, 0, 0, 0.249);
+    animation: 
+        sombraCaixa var(--rotateSpeed) infinite ease-out;
+}
+
+@keyframes sombraCaixa {
+    
+}
