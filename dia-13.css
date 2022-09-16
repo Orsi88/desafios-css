@@ -25,19 +25,35 @@ body {
 .ambiente {
     position: relative;
     transform-style: preserve-3d;
-    animation: ambiente-flutua var(--rotateSpeed) infinite linear reverse;
+    animation: ambiente-flutua var(--rotateSpeed) infinite linear reverse, vira-volta 0.5s ease-in-out;
 }
 
 .ambiente:hover {
     cursor: pointer;
     transition: 0.3s;
-    animation: ambiente-flutua var(--rotateSpeed) infinite linear reverse, vira 0.3s ease-in-out;
+    animation: ambiente-flutua var(--rotateSpeed) infinite linear reverse, vira 0.5s ease-in-out;
     animation-fill-mode: forwards;
 }
 
 @keyframes vira {
+    
+    from {
+        transform: rotateY(0deg);
+    }
+    
     to {
         transform: rotateY(-90deg);
+    }
+}
+
+@keyframes vira-volta {
+    
+    from {
+        transform: rotateY(-90deg);
+    }
+    
+    to {
+        transform: rotateY(0deg);
     }
 }
 
@@ -50,7 +66,6 @@ body {
     }
 }
 
-
 .caixa-maior {
     width: 2em;
     height: 4em;
@@ -60,11 +75,34 @@ body {
     transform-style: preserve-3d;
     transform: 
         rotateY(45deg);
-    animation: caixa-sobe 0.5s ease;
+    animation: caixa-sobe-volta 0.5s ease-in-out;
+}
+
+.ambiente:hover .caixa-maior {
+    animation: caixa-sobe 0.5s ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 @keyframes caixa-sobe {
     
+    from {
+        top: -3em;
+    }
+    
+    to {
+        top: -3.5em;
+    }
+}
+
+@keyframes caixa-sobe-volta {
+    
+    from {
+        top: -3.5em;
+    }
+    
+    to {
+        top: -3em;
+    }
 }
 
 .front, .back, .left, .rigth {
@@ -83,6 +121,10 @@ body {
     transform: 
         rotateY(90deg)
         translateZ(1em);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 .back{
     background-color: rgb(237, 90, 163);
@@ -109,7 +151,36 @@ body {
         translateY(0);
     background-color: pink;
     top: -1em;
+    animation: caixa-desce-volta 1s ease-in-out;
 }
+
+.ambiente:hover .caixa-maior-2 {
+    animation: caixa-desce 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes caixa-desce {
+    
+    from {
+        top: 1.9em;
+    }
+
+    to {
+        top: 1.95em;
+    }
+}
+
+@keyframes caixa-desce-volta {
+    
+    from {
+        top: 1.95em;
+    }
+
+    to {
+        top: 1.9em;
+    }
+}
+
 
 
 .caixa-maior-2 {
@@ -188,12 +259,18 @@ body {
 .front-3 {
     transform: translateZ(0.9em);
     background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .rigth-3{
     background-color:rgb(67, 20, 197);
     transform: 
         rotateY(90deg)
         translateZ(0.9em);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .back-3{
     background-color: blueviolet;
@@ -235,20 +312,34 @@ body {
     margin-top: 70px;
 }
 
-.sombra-caixa {
-    position: absolute;
-    width: 2em;
-    height: 2em;
-    bottom: -5em;
-    transform: 
-        rotateX(90deg)
-        rotateZ(45deg)
-        translateX(-1.5em);
-    background-color: rgba(0, 0, 0, 0.249);
-    animation: 
-        sombraCaixa var(--rotateSpeed) infinite ease-out;
+.rigth h3 {
+    font-size: 25px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    color: #5222D0;
 }
 
-@keyframes sombraCaixa {
-    
+.rigth p {
+    font-size: 18px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    color: #5222D0;
+}
+
+.rigth .seta {
+    transition: 0.6s;
+}
+
+.rigth-3 p {
+    font-size: 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    margin-top: 80px;
+    color: #c2b6e2;
+}
+
+.grafico {
+    margin-top: 80px;
+    width: 100px;
+    height: 100px;
 }
