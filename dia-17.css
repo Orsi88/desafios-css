@@ -29,8 +29,8 @@ fieldset {
 }
 
 img {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
 }
 
 h1 {
@@ -41,28 +41,37 @@ h1 {
 }
 
 .formulario {
+    margin-top: 30px;
+    width: 220px;
+    height: 90px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+input, label {
+    width: 210px;
+    height: 30px;
+    padding-left: 20px;
 }
 input {
-    width: 200px;
-    height: 30px;
-    margin: 10px;
-    border: none;
-    padding-left: 5px;
     background-color: rgba(240, 248, 255, 0);
+    border: none;
+}
+
+textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
 }
 
 label {
+    background-color: rgba(245, 245, 245, 0.832);
+    padding: 5px;
     display: flex;
     align-items: center;
-    width: 200px;
-    height: 30px;
-    margin: 10px 0px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: whitesmoke;
+    cursor: pointer;
+    border-radius: 5px;
+    
 }
 
 .links {
@@ -71,7 +80,7 @@ label {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 a, button{
@@ -87,14 +96,25 @@ a, button{
 
 a {
     text-decoration: none;
-    color: black;
-    background-color: whitesmoke;
+    color: rgba(0, 0, 0, 0.682);
+    border: solid 1px blueviolet;
+    transition: 0.3s;
+}
+
+a:hover {
+    border-color:  rgb(64, 15, 15);
 }
 
 button {
     font-weight: 100;
     border: none;
-    background-color: blueviolet;
-    color: rgba(245, 245, 245, 0.767);
+    background-color: rgb(64, 15, 15);
+    color: rgba(245, 245, 245, 0.666);
     letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: blueviolet;
+    transform: scale(1.1);
 }
