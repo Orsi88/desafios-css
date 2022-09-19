@@ -507,6 +507,10 @@ input[type="checkbox"]:checked ~ .caixa-ambiente .escondida .graficos .grafico .
     0% {
         background-color: #5222D0;
     }
+
+    10% {
+        transition: all 0.2s 0.325s;
+    }
     50% {
         background-color: #c2b6e2;
     }
