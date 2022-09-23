@@ -4,3 +4,44 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: plum;
+}
+
+img {
+    height: 250px;
+    margin: 10px;
+}
+
+h1 {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.album {
+    width: 95vw;
+    overflow-x: scroll;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.album::-webkit-scrollbar {
+    background-color: blueviolet;
+    border-radius: 20px;
+
+}
+
+.album::-webkit-scrollbar-thumb {
+    background-color: cyan;
+    border-radius: 20px;
+}
